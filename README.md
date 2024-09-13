@@ -22,7 +22,7 @@ This backend service is built using Node.js with the Express framework and Postg
 
 - Node.js and npm installed
 - PostgreSQL installed and running
-- Google sheets API setup for data synchronization (credentials.json file in the root directory)
+- Google sheets API setup for data synchronization (creds.json file in the root directory)
 
 ### Installation
 
