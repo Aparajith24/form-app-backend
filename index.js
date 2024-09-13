@@ -63,8 +63,12 @@ app.post("/api/update-sheets", async (req, res) => {
       row.submission_date.toISOString(),
     ]);
     const auth = new google.auth.GoogleAuth({
-      keyFile: "creds.json",
       scopes: "https://www.googleapis.com/auth/spreadsheets",
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+        projectId: process.env.GOOGLE_PROJECT_ID,
+      },
     });
     const sheetsClient = await auth.getClient();
     const sheets = google.sheets({ version: "v4", auth: sheetsClient });
