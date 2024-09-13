@@ -11,11 +11,11 @@ app.use(cors());
 
 // Database connection
 const client = new Client({
-  user: "forms_96e3_user",
-  password: "ha7v7JjCsEYaTzJM1IY4zKT5GgHyRGG9",
-  host: "dpg-crhtcdrv2p9s73bfu8vg-a.singapore-postgres.render.com",
-  port: "5432",
-  database: "forms_96e3",
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
   ssl: {
     rejectUnauthorized: false,
   },
